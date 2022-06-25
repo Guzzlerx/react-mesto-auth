@@ -1,0 +1,27 @@
+.profile__overlay-avatar {
+    text-decoration: none;
+    position: relative;
+}
+
+.profile__overlay-avatar:before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    background-image: url("../../../images/avatar_overlay-pic.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 26px;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity .4s ease;
+    cursor: pointer;
+}
+
+.profile__overlay-avatar:hover:before {
+    opacity: 1;
+}

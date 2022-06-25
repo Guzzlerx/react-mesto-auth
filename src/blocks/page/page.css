@@ -1,0 +1,13 @@
+.page {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background-color: #000;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    min-width: 320px;
+    min-height: 100vh;
+}

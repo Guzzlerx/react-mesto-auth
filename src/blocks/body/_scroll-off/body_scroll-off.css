@@ -1,0 +1,4 @@
+.body_scroll-off {
+    height: 100vh;
+    overflow: hidden;
+}

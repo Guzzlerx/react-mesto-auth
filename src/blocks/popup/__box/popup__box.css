@@ -1,0 +1,12 @@
+.popup__box {
+    position: relative;
+    margin: auto;
+    width: 75vw;
+    height: 75vh;
+}
+
+@media screen and (max-width: 720px) {
+    .popup__box {
+        max-height: 300px;
+    }
+}

@@ -1,0 +1,8 @@
+.cards__photo_active {
+    width: 75vw;
+    height: 75vh;
+    margin: 0 auto;
+    border-radius: 0;
+    align-self: center;
+    z-index: 2;
+}

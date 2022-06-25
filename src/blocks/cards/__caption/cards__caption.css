@@ -1,0 +1,16 @@
+.cards__caption {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    border-radius: 0 0 10px 10px;
+    padding: 25px 15px 31px 21px;
+    margin: 0;
+    align-items: center;
+}
+
+@media screen and (max-width: 720px){
+    .cards__caption {
+        padding: 25px 15px 25px 21px;
+    }
+}

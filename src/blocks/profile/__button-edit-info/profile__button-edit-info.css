@@ -1,0 +1,24 @@
+.profile__button-edit-info {
+    background-image: url("../../../images/pen-vector.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border: solid 1px white;
+    transition: opacity .4s ease-in;
+    background-color: #000;
+    padding: 0;
+}
+
+.profile__button-edit-info:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 720px){
+    .profile__button-edit-info {
+        width: 18px;
+        height: 18px;
+    }
+}
