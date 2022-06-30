@@ -3,15 +3,16 @@
     padding-bottom: 41px;
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
     .header__logo {
         margin-left: 27px;
     }
 }
 
-@media screen and (max-width: 720px){
+@media screen and (max-width: 720px) {
     .header__logo {
         width: 103.74px;
         padding-bottom: 31.6px;
+        margin-left: 30px;
     }
 }

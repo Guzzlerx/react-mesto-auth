@@ -1,0 +1,10 @@
+.menu {
+    display: none;
+    margin: 0 auto;
+    padding: 40px 0;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+}
