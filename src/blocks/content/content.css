@@ -1,14 +1,14 @@
 .content {
-    margin: 0 200px;
+    margin: 40px 200px 0;
 }
 
-@media screen and (max-width: 1120px){
+@media screen and (max-width: 1120px) {
     .content {
         margin: 0 100px;
     }
 }
 
-@media screen and (max-width: 900px){
+@media screen and (max-width: 900px) {
     .content {
         margin: 0 19px;
     }

@@ -1,0 +1,11 @@
+.popup__button-submit_type_auth {
+    background-color: white;
+    color: black;
+    margin: 183px 0 15px;
+}
+
+@media screen and (max-width: 720px) {
+    .popup__button-submit_type_auth {
+        margin: 134px 0 15px;
+    }
+}

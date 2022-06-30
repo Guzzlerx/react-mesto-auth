@@ -1,0 +1,7 @@
+.popup__auth-icon {
+    height: 120px;
+    width: 120px;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin: 26px 0 32px;
+}

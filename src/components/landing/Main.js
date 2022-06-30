@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import Card from "../Card";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import UserDataContext from "../../contexts/UserDataContext";
 
 function Main({
     onEditProfile,
