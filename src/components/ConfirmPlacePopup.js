@@ -12,7 +12,10 @@ function ConfirmPlacePopup({ onClose, isOpen, onSubmit, cardId, isLoading }) {
             className={`popup popup_type_confirm ${isOpen && "popup_active"}`}
             onClick={onClose}
         >
-            <div className="popup__container">
+            <div
+                className="popup__container"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <form
                     className="popup__form popup__form_type_confirm"
                     name="add-card"
@@ -33,6 +36,7 @@ function ConfirmPlacePopup({ onClose, isOpen, onSubmit, cardId, isLoading }) {
                 <button
                     className="popup__button-close popup__button-close_type_confirm"
                     type="button"
+                    onClick={onClose}
                 ></button>
             </div>
         </div>

@@ -6,7 +6,10 @@ function InfoTooltip({ isOpen, onClose, isError }) {
             }`}
             onClick={onClose}
         >
-            <div className="popup__container">
+            <div
+                className="popup__container"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <form className="popup__form" name="auth-confirm" noValidate>
                     <div
                         className={`popup__auth-icon ${
@@ -24,6 +27,7 @@ function InfoTooltip({ isOpen, onClose, isError }) {
                 <button
                     className="popup__button-close popup__button-close_type_confirm"
                     type="button"
+                    onClick={onClose}
                 ></button>
             </div>
         </div>

@@ -12,7 +12,7 @@ function Card({
     onCardLikeClick,
     onCardDeleteBtnClick,
 }) {
-    const currentUser = useContext(CurrentUserContext);
+    const { currentUser } = useContext(CurrentUserContext);
 
     const isOwnCard = currentUser._id === owner._id;
     const isOwnLike = likes.some((like) => like._id === currentUser._id);

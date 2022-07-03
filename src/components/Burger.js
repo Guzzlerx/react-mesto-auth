@@ -3,21 +3,13 @@ function Burger({ isMenuOpen, onBurgerClick }) {
         onBurgerClick(!isMenuOpen);
     }
     return (
-        <>
-            {isMenuOpen ? (
-                <button
-                    className="header__link header__button header__button_type_close"
-                    onClick={handleClick}
-                    name="Закрыть"
-                />
-            ) : (
-                <button
-                    className="header__link header__button header__button_type_burger"
-                    onClick={handleClick}
-                    name="Меню"
-                />
-            )}
-        </>
+        <button
+            className={`header__link header__button header__button_type_${
+                isMenuOpen ? "close" : "burger"
+            }`}
+            onClick={handleClick}
+            name={isMenuOpen ? "Закрыть" : "Меню"}
+        />
     );
 }
 

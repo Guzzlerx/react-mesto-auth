@@ -31,7 +31,10 @@ function EditProfilePopup({ isOpen, onClose, onSubmit, isLoading }) {
             }`}
             onClick={onClose}
         >
-            <div className="popup__container">
+            <div
+                className="popup__container"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <form
                     className={`popup__form popup__form_type_edit-profile`}
                     name="edit-profile"
@@ -76,6 +79,7 @@ function EditProfilePopup({ isOpen, onClose, onSubmit, isLoading }) {
                 <button
                     className={`popup__button-close popup__button-close_type_edit-profile`}
                     type="button"
+                    onClick={onClose}
                 ></button>
             </div>
         </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../Header";
-import Loader from "../Loader";
 
 function Login({ isLoading, onSubmit }) {
     const [data, setData] = useState({

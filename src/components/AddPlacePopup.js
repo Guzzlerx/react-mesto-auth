@@ -25,7 +25,10 @@ function AddPlacePopup({ isOpen, onClose, onSubmit, isLoading }) {
             className={`popup popup_type_add-card ${isOpen && "popup_active"}`}
             onClick={onClose}
         >
-            <div className="popup__container">
+            <div
+                className="popup__container"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <form
                     className={`popup__form popup__form_type_add-card`}
                     name="add-card"
@@ -66,6 +69,7 @@ function AddPlacePopup({ isOpen, onClose, onSubmit, isLoading }) {
                 <button
                     className={`popup__button-close popup__button-close_type_add-card`}
                     type="button"
+                    onClick={onClose}
                 ></button>
             </div>
         </div>
