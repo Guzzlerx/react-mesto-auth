@@ -1,4 +1,4 @@
-function InfoTooltip({ isOpen, onClose, isError, errorStatus }) {
+function InfoTooltip({ isOpen, onClose, isError }) {
     return (
         <div
             className={`popup popup_type_auth-confirm ${
@@ -6,11 +6,8 @@ function InfoTooltip({ isOpen, onClose, isError, errorStatus }) {
             }`}
             onClick={onClose}
         >
-            <div
-                className="popup__container"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <form className="popup__form" name="auth-confirm" noValidate>
+            <div className="popup__container">
+                <div className="popup__form" name="auth-confirm" noValidate>
                     <div
                         className={`popup__auth-icon ${
                             isError
@@ -20,14 +17,13 @@ function InfoTooltip({ isOpen, onClose, isError, errorStatus }) {
                     ></div>
                     <h2 className="popup__title popup__auth-title">
                         {isError
-                            ? errorStatus
+                            ? "Что-то пошло не так! Попробуйте еще раз"
                             : "Вы успешно зарегистрировались!"}
                     </h2>
-                </form>
+                </div>
                 <button
                     className="popup__button-close popup__button-close_type_confirm"
                     type="button"
-                    onClick={onClose}
                 ></button>
             </div>
         </div>

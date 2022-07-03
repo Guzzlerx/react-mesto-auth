@@ -1,12 +1,13 @@
 import { useState, useContext, useEffect } from "react";
 
 import CurrentUserContext from "../contexts/CurrentUserContext";
-import Loader from "./Loader";
+import PopupWithForm from "./PopupWithForm";
 
-function EditProfilePopup({ isOpen, onClose, onSubmit, isLoading }) {
+function EditProfilePopup({ isOpen, onSubmit, ...props }) {
     const {
         currentUser: { name, about },
     } = useContext(CurrentUserContext);
+
     const [inputValue, setInputValue] = useState({ name, about });
 
     function onInputChange(e) {
@@ -27,64 +28,40 @@ function EditProfilePopup({ isOpen, onClose, onSubmit, isLoading }) {
     }, [name, about, isOpen]);
 
     return (
-        <div
-            className={`popup popup_type_edit-profile ${
-                isOpen && "popup_active"
-            }`}
-            onClick={onClose}
+        <PopupWithForm
+            onSubmit={handleSubmit}
+            title="Редактировать профиль"
+            btnTitle="Сохранить"
+            isOpen={isOpen}
+            {...props}
         >
-            <div
-                className="popup__container"
-                onClick={(e) => e.stopPropagation()}
-            >
-                <form
-                    className={`popup__form popup__form_type_edit-profile`}
-                    name="edit-profile"
-                    noValidate
-                    onSubmit={handleSubmit}
-                >
-                    <h2 className="popup__title">Редактировать профиль</h2>
-                    <input
-                        className="popup__input popup__input_type_name"
-                        id="profile-name"
-                        type="text"
-                        name="name"
-                        placeholder="Ваше имя"
-                        required
-                        minLength="2"
-                        maxLength="40"
-                        value={inputValue.name || ""}
-                        onChange={onInputChange}
-                    />
-                    <span className="popup__input-error profile-name-error"></span>
-                    <input
-                        className="popup__input popup__input_type_description"
-                        id="profile-description"
-                        type="text"
-                        name="about"
-                        placeholder="Ваш род деятельности"
-                        required
-                        minLength="2"
-                        maxLength="200"
-                        value={inputValue.about || ""}
-                        onChange={onInputChange}
-                    />
-                    <span className="popup__input-error profile-description-error"></span>
-                    {isLoading ? (
-                        <Loader />
-                    ) : (
-                        <button className="popup__button-submit" type="submit">
-                            Сохранить
-                        </button>
-                    )}
-                </form>
-                <button
-                    className={`popup__button-close popup__button-close_type_edit-profile`}
-                    type="button"
-                    onClick={onClose}
-                ></button>
-            </div>
-        </div>
+            <input
+                className="popup__input popup__input_type_name"
+                id="profile-name"
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+                required
+                minLength="2"
+                maxLength="40"
+                value={inputValue.name || ""}
+                onChange={onInputChange}
+            />
+            <span className="popup__input-error profile-name-error"></span>
+            <input
+                className="popup__input popup__input_type_description"
+                id="profile-description"
+                type="text"
+                name="about"
+                placeholder="Ваш род деятельности"
+                required
+                minLength="2"
+                maxLength="200"
+                value={inputValue.about || ""}
+                onChange={onInputChange}
+            />
+            <span className="popup__input-error profile-description-error"></span>
+        </PopupWithForm>
     );
 }
 
