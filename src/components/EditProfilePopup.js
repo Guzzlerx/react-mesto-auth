@@ -4,7 +4,9 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 import Loader from "./Loader";
 
 function EditProfilePopup({ isOpen, onClose, onSubmit, isLoading }) {
-    const { name, about } = useContext(CurrentUserContext);
+    const {
+        currentUser: { name, about },
+    } = useContext(CurrentUserContext);
     const [inputValue, setInputValue] = useState({ name, about });
 
     function onInputChange(e) {
