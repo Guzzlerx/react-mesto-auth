@@ -31,11 +31,14 @@ class Auth {
         }).then(this._checkResponse);
     };
 
-    _checkResponse = (response) => {
+    _checkResponse = async (response) => {
         if (response.ok) {
             return response.json();
         }
-        return Promise.reject(response.statusText);
+
+        const answer = await response.json();
+
+        return Promise.reject(answer.message || answer.error);
     };
 }
 

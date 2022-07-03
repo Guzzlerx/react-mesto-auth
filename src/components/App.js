@@ -31,6 +31,7 @@ function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
     const [isError, setIsError] = useState(false);
+    const [errorStatus, setErrorStatus] = useState("");
 
     const history = useHistory();
 
@@ -94,7 +95,9 @@ function App() {
         setIsLoading(true);
 
         api.setUserAvatar(link)
-            .then((newUserInfo) => setCurrentUser(newUserInfo))
+            .then((newUserInfo) =>
+                setCurrentUser((state) => ({ ...state, ...newUserInfo }))
+            )
             .catch((err) => console.error(`Ошибка - ${err}!`))
             .finally(() => setIsLoading(false));
 
@@ -106,7 +109,7 @@ function App() {
 
         api.setUserInfo(userInfo)
             .then((newUserInfo) => {
-                setCurrentUser(newUserInfo);
+                setCurrentUser((state) => ({ ...state, ...newUserInfo }));
             })
             .catch((err) => console.error(`Ошибка - ${err}!`))
             .finally(() => setIsLoading(false));
@@ -146,6 +149,7 @@ function App() {
             })
             .catch((err) => {
                 setIsError(true);
+                setErrorStatus(err);
                 console.error(`Ошибка - ${err}!`);
             })
             .finally(() => {
@@ -173,6 +177,7 @@ function App() {
             })
             .catch((err) => {
                 setIsError(true);
+                setErrorStatus(err);
                 setIsConfirmRegistrationPopupOpen(true);
 
                 console.error(`Ошибка - ${err}!`);
@@ -339,6 +344,7 @@ function App() {
                     isOpen={isConfirmRegistrationPopupOpen}
                     onClose={closeAllPopups}
                     isError={isError}
+                    errorStatus={errorStatus}
                 />
             </div>
         </CurrentUserContext.Provider>

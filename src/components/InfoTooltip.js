@@ -1,4 +1,4 @@
-function InfoTooltip({ isOpen, onClose, isError }) {
+function InfoTooltip({ isOpen, onClose, isError, errorStatus }) {
     return (
         <div
             className={`popup popup_type_auth-confirm ${
@@ -20,7 +20,7 @@ function InfoTooltip({ isOpen, onClose, isError }) {
                     ></div>
                     <h2 className="popup__title popup__auth-title">
                         {isError
-                            ? "Что-то пошло не так! Попробуйте еще раз"
+                            ? errorStatus
                             : "Вы успешно зарегистрировались!"}
                     </h2>
                 </form>
