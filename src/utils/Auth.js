@@ -38,7 +38,9 @@ class Auth {
 
         const answer = await response.json();
 
-        return Promise.reject(answer.message || answer.error);
+        return Promise.reject(
+            answer.message || answer.error || "Что-то пошло не так :("
+        );
     };
 }
 

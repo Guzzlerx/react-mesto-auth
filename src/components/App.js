@@ -150,6 +150,7 @@ function App() {
             .catch((err) => {
                 setIsError(true);
                 setErrorStatus(err);
+
                 console.error(`Ошибка - ${err}!`);
             })
             .finally(() => {
