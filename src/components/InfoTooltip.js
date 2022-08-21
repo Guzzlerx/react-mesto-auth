@@ -16,7 +16,7 @@ function InfoTooltip({ isOpen, onClose, isError, errorStatus }) {
                         }`}
                     ></div>
                     <h2 className="popup__title popup__auth-title">
-                        {isError && errorStatus}
+                        {isError ? errorStatus : 'Вы успешно зарегистрировались'}
                     </h2>
                 </div>
                 <button
